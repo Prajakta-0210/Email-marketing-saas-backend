@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ContactStatus {
+  Subscribed
+  Unsubscribed
+  Bounced
+}
+
+model Contact {
+  id        String        @id @default(cuid())
+  name      String
+  email     String        @unique
+  phone     String?
+  city      String?
+  status    ContactStatus @default(Subscribed)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
