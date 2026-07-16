@@ -3,6 +3,7 @@ import cors from "cors";
 
 import healthRoutes from "./routes/health.routes";
 import contactsRoutes from "./routes/contacts.routes";
+import campaignsRoutes from "./routes/campaigns.routes";
 
 const app: Application = express();
 
@@ -22,5 +23,6 @@ app.use(express.json());
 // Fiber equivalent: app.Group("/api/health", healthRoutes)
 app.use("/api/health", healthRoutes);
 app.use("/api/contacts", contactsRoutes);
+app.use("/api/campaigns", campaignsRoutes);
 
 export default app;
