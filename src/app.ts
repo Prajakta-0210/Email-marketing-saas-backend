@@ -5,6 +5,7 @@ import healthRoutes from "./routes/health.routes";
 import contactsRoutes from "./routes/contacts.routes";
 import campaignsRoutes from "./routes/campaigns.routes";
 import audiencesRoutes from "./routes/audiences.routes"; 
+import authRoutes from "./routes/auth.routes"; 
 
 const app: Application = express();
 
@@ -26,5 +27,6 @@ app.use("/api/health", healthRoutes);
 app.use("/api/contacts", contactsRoutes);
 app.use("/api/campaigns", campaignsRoutes);
 app.use("/api/audiences", audiencesRoutes); 
+app.use("/api/auth", authRoutes);
 
 export default app;
