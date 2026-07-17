@@ -4,6 +4,7 @@ import cors from "cors";
 import healthRoutes from "./routes/health.routes";
 import contactsRoutes from "./routes/contacts.routes";
 import campaignsRoutes from "./routes/campaigns.routes";
+import audiencesRoutes from "./routes/audiences.routes"; 
 
 const app: Application = express();
 
@@ -24,5 +25,6 @@ app.use(express.json());
 app.use("/api/health", healthRoutes);
 app.use("/api/contacts", contactsRoutes);
 app.use("/api/campaigns", campaignsRoutes);
+app.use("/api/audiences", audiencesRoutes); 
 
 export default app;

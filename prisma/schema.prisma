@@ -46,3 +46,13 @@ model Campaign {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
 }
+
+model Audience {
+  id           String   @id @default(cuid())
+  name         String
+  description  String?
+  filters      String[] // Postgres native array — e.g. ["Status: Subscribed", "Country: US"]
+  contactCount Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
